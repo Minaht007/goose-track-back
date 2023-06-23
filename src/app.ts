@@ -6,6 +6,9 @@ dotenv.config();
 import tasksRouter from "./routes/tasksRouter";
 import usersRouter from "./routes/usersRouter";
 
+import swaggerUi from "swagger-ui-express";
+import swaggerDocument from "./swagger.json";
+
 const app = express();
 
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
@@ -18,6 +21,8 @@ app.use(express.json());
 // *** main routers:
 app.use("/users", usersRouter);
 app.use("/tasks", tasksRouter);
+// swaggerRouter
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // *** error handlers:
 app.use((_req: any, res: Response) => {

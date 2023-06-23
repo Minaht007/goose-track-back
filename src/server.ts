@@ -2,7 +2,6 @@ import dotenv from "dotenv";
 dotenv.config();
 import app from "./app";
 import mongoose from "mongoose";
-import swagger from "swagger-ui-express";
 
 const { DB_HOST = "", PORT = 3001 } = process.env;
 
