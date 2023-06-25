@@ -67,7 +67,7 @@
         }
       }
     },
-    "/users/login": {
+    "/auth/users/login": {
       "post": {
         "tags": ["Auth"],
         "summary": "User login",
